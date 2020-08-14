@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = "hello"
+        // //alert(a)
+        // // document.write(a)
+        // console.log(a)
+        // var boo = true;
+        // var und = undefined;
+        // var nul = null;
+
+        // function foo(a,b,c,d){
+        //     console.log(a,b,c,d);
+        // }
+        // foo(1,2);
+
+        // console.log(Math.random()*50);
+
+        // var x = 1;
+        // var a=10;
+        // console.log(a/x)
+
+
+        // var timer = new Date();
+        // var year = timer.getFullYear();
+        // if((year%4==0&&year%100!=0)||(year%400==0))
+        // console.log("闰年");
+        // else console.log("不是闰年");
+
+
+        //  计算f(x) = 4x2+3x+2
+        // var a = window.prompt("请输入数字");
+        // var x = 4*a*a+3*a+2;
+        // document.write(x);
+
+
+        // 输出最小值
+        // var x = window.prompt("请输入x");
+        // var y = window.prompt("请输入y");
+        // function Min(x,y){
+        //     if(x>y)
+        //     document.write("y是最小值");
+        //     else if(x<y)
+        //     document.write("x是最小值");
+        //     else
+        //     document.write("x=y");
+        // }
+        // Min(x,y);
+
+
+        // var isGoon = true;
+        // var win = 0;
+        // var all = 0;
+        // while(isGoon){
+        //     var a = Math.floor(Math.random*8)+1
+        //     var b = Math.floor(Math.random*8)+1
+        //     var c = Math.floor(Math.random*8)+1
+        //     if(a==8||b==8||c==8)
+        //     {
+        //         win++;
+        //     }
+        //     all++;
+        //     document.write(win);
+        //     document.write(win/all);
+        //     isGoon = window.confirm("是否继续");
+        // }
+
+//           function foo(i){
+//     if(i<3){
+//       return 1
+//     }else{
+//       return foo(i-1) + foo(i-2)
+//     }
+//   }
+//   console.log(foo(6))
+
+
+
+
+// 点餐
+function ranFood(){
+    var ranNum = Math.floor(Math.random()*10);
+    var _foodName = "";
+    switch(ranNum){
+        case 0:_foodName = "1";break;
+        case 1:_foodName = "2";break;
+        case 2:_foodName = "3";break;
+        case 3:_foodName = "4";break;
+        case 4:_foodName = "5";break;
+        case 5:_foodName = "6";break;
+        case 6:_foodName = "7";break;
+        case 7:_foodName = "8";break;
+        case 8:_foodName = "9";break;
+        case 9:_foodName = "10";break;
+    }
+    return _foodName
+}
+var isGoon = window.confirm("是否需要点餐");
+if(isGoon){
+    var personNum = window.prompt("几人用餐");
+    personNum = parseInt(personNum);
+    var personName=[];
+    var result =[];
+    for(var i =0 ;i<personNum;i++){
+        var _thisName = window.prompt("第"+(i+1)+"个人叫");
+        personName.push(_thisName);
+
+    }
+    for(var j=0;j<personNum;j++){
+        result.push(personName[j]+"吃"+ranFood())
+    }
+}else{
+    alert("你已经取消")
+}
+console.log(result);
+
+    </script>
+</body>
+</html>

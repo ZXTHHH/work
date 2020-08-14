@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <div class="div1">世界</div>
+        <div class="div2">你好</div>
+    </div>
+    <script>
+        var oBox = document.getElementById("box");
+        var oH1 = document.createElement("h1");
+        var div1 = document.querySelector(".div1")
+        var div2 = document.querySelector(".div2")
+
+        oH1.innerText = "hello";
+        oH1.style.color = "red";
+        oBox.appendChild(oH1);
+        oBox.insertBefore(div2,div1)  //前面放后面的前面
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: chocolate;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .slider {
+            height: 250px;
+        }
+
+        .slider-panner {
+            height: 250px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+
+        }
+
+        .slider .active {
+            opacity: 1;
+        }
+
+        .slider-panner div {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <div class="slider-panner sp-1 active">
+            <div>
+                <img src="../xiaomi/image/sj1.webp" alt="">
+            </div>
+        </div>
+        <div class="slider-panner sp-2">
+            <div>
+                <img src="../xiaomi/image/sj2.webp" alt="">
+            </div>
+        </div>
+        <div class="slider-panner sp-3">
+            <div>
+                <img src="../xiaomi/image/sj3.webp" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="list-button">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script>
+        var slidePanner = document.getElementsByClassName("slider-panner");
+        var nowIndex = 0;
+        setInterval(function () {
+            slidePanner[nowIndex].classList.remove("active");
+            if (++nowIndex < 3) {
+                slidePanner[nowIndex].classList.add("active");
+            } else {
+                nowIndex = 0;
+                slidePanner[nowIndex].classList.add("active");
+            }
+        }, 1000)
+    </script>
+</body>
+
+</html>

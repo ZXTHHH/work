@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .box{
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: rgb(56, 59, 59);
+        }
+        header,nav,footer{
+            height: 100px;
+            background-color: gray;
+            margin-top: 10px;
+            border-radius: 5px;
+            color: black;
+            text-align: center;
+            line-height: 100px;
+        }
+        img{
+            width: 100%;
+        }
+        article{
+            float: left;
+            height: 300px;
+            background-color: blue;
+            width: 60%;
+            
+        }
+        aside{
+            float: right;
+            background-color: green;
+            width: 30%;
+            height: 300px;
+        }
+        @media(max-width: 960px) and (min-width: 600px){
+            article,aside{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <header>页头</header>
+        <nav>导航</nav>
+        <div class="img">
+            <img src="../image/01_s.jpg" alt="">
+        </div>
+        <div class="content clear">
+            <article><p>一堆文字</p></article>
+            <aside><p>另一堆文字</p></aside>
+        </div>
+        <footer>页脚</footer>
+    </div>
+</body>
+
+</html>

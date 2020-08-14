@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+        li{
+            list-style: none;
+            float: left;
+        }
+        li img{
+            width: 120px;
+            height: 100px;
+        }
+        .big-img{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="big-img">
+            <img id="big-img" src="../image/3fd46a6c05513f0fb9d658adf6c6efe.jpg" alt="">
+        </div>
+        <div class="small-img">
+            <ul>
+                <li><img src="../image/4165113218958e63199bc1685e57eca.png" alt=""></li>
+                <li><img src="../image/QQ图片20181003133116.jpg" alt=""></li>
+                <li><img src="../xiaomi/image/d642186fd8522cabef9fc4986fdc13f.png" alt=""></li>
+                <li><img src="../xiaomi/image/816a66edef10673b4768128b41804cae.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var bigImg = document.getElementById("big-img");
+        var smallImg = document.getElementsByClassName("small-img")[0];
+        var imgArr = document.getElementsByTagName("img");
+
+        for(var i=0;i<imgArr.length;i++){
+            imgArr[i].onmousemove = function(){
+                var _imgSrc = this.getAttribute("src");
+                bigImg.setAttribute("src",_imgSrc)
+            }
+        }
+    </script>
+</body>
+</html>

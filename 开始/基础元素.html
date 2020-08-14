@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础标签</title>
+    <style>
+        a:hover{
+            background-color: chartreuse;
+            color: crimson;
+        }
+        .h1{
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 20px;
+            border-color: transparent red green bisque;
+        }
+    </style>
+
+</head>
+<body style="height: 2000px;">
+    <!--标题-->>
+    <h1>我的页面</h1>
+
+    <!--正文-->
+    <p>君埋泉下泥销骨</p>
+    <p>我寄人间雪满头</p>
+
+    <!--超链接-->
+    <div>
+        <a href="file:///E:/work/表单元素.html" target="_blank">名单</a>
+    </div>
+
+
+    <!--图片 src 路径 相对 外跳../ 里跳/，绝对   alt 图片加载不出来就显示alt title 鼠标划入显示-->
+    <img src="image/QQ图片20181003133116.jpg" alt="图片" title="我很喜欢你" style="height: 400px; width: 400pxs;">
+
+    <!--无序列表 ul只能放li li可以放div之类-->
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <!--有序列表-->
+    <ol>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ol>
+
+     <!--块级元素 自己占一行
+            可以设置宽高
+            div p h ul ol li
+        行级元素 多个一行
+            不可以设置宽高
+            span a strong(加粗) i(斜体)
+        img是行级块元素
+            多个一行，能设置宽高
+    
+    -->
+    <!--布局，划分区块 块元素 自己占一行-->
+    <div style="background: red; width: 500px;">
+        哈哈哈嘿嘿嘿<span style="background-color: aqua;"> 巴啦啦能量</span><strong>呜呼啦呼</strong>黑魔变身
+    </div>
+
+    <!--行元素 多个一行-->
+    <span style="background-color: aqua;"> hhh</span>
+
+
+
+
+    <div class="h1">
+    </div>
+
+</body>
+</html>

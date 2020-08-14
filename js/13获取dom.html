@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box1">
+        <span>1</span>
+        <span>2</span>
+        <div>hello</div>
+    </div>
+    <div class="box2">
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+    </div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        var oBox2 = document.querySelector(".box1");
+        var oBox3 = document.querySelectorAll(".box");
+        var div3 = document.querySelector(".div3");
+
+        console.log(oBox,oBox2,oBox3);
+        console.log(oBox2.childNodes);
+        console.log(oBox2.children);
+
+        console.log(div3.previousElementSibling);
+        console.log(div3.previousSibling);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 400px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div id="box2">100</div>
+        <button id="b">开始</button>
+    </div>
+    <script>
+        var Obtn = document.getElementById("b");
+        var box2 = document.getElementById("box2");
+        var isRun = true;
+        var time =null;
+        Obtn.onclick = function(){
+            if(isRun){
+                Obtn.innerText="暂停";
+                time = setInterval(function(){
+                    box2.innerText=--box2.innerText;
+                },1000 )
+            }
+            else{
+                Obtn.innerText="开始";
+                clearInterval();
+            }
+            isRun=!isRun;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,
+        .box2,
+        .box3 {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box1">
+            <span>哈哈</span>
+            <button class="up">上移</button>
+            <button class="down">下移</button>
+        </div>
+        <div class="box2">
+            <span>嘻嘻</span>
+            <button class="up">上移</button>
+            <button class="down">下移</button>
+        </div>
+        <div class="box3">
+            <span>嘿嘿</span>
+            <button class="up">上移</button>
+            <button class="down">下移</button>
+        </div>
+    </div>
+    <script>
+        var oBox = document.querySelector(".box");
+        var oBox1 = document.querySelector(".box1");
+        var oBox2 = document.querySelector(".box2");
+        var oBox3 = document.querySelector(".box3");
+        var up = document.querySelectorAll(".up");
+        var down = document.querySelectorAll(".down");
+
+        for (var i = 0; i < up.length; i++) {
+            up[i].onclick = function () {
+                var parentEl = this.parentElement;
+                var parentPr = parentEl.previousElementSibling;
+                if (parentPr) {
+                    oBox.insertBefore(parentEl, parentPr)
+                } else {
+                    console.log("到顶了");
+                }
+            }
+            down[i].onclick = function(){
+                var parentEl = this.parentElement;
+                var parentNe = parentEl.nextElementSibling;
+                if(parentNe){
+                    oBox.insertBefore(parentNe,parentEl)
+                }else{
+                    console.log("到底了");
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
