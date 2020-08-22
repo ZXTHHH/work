@@ -77,8 +77,8 @@
         <div class="btn-content">
             <div class="bc-left">
                 <ul>
-                    <li class="arr-btn">&lt;</li>
-                    <li class="arr-btn">&gt;</li>
+                    <li class="arr-btn" id="last">&lt;</li>
+                    <li class="arr-btn" id="next">&gt;</li>
                 </ul>
             </div>
             <div class="bc-right">
@@ -96,9 +96,51 @@
 
     <script src="jquery-1.12.4.js"></script>
     <script>
+        var iNow = 0;//记录当前索引为0
+        var timer;
         $('.num-btn').on('click',function(){
-            $(this).addClass('active').siblings().removeClass('active');
-            $('.img-list').eq( $(this).index() ).addClass('active').siblings().removeClass('active');
+            // $('.num-btn').eq( $(this).index() ).addClass('active').siblings().removeClass('active');
+            // $('.img-list').eq( $(this).index() ).addClass('active').siblings().removeClass('active');
+            change( $(this).index() );
+            iNow = $(this).index();
+        })
+
+        $('#next').on('click',function(){
+            iNow++;
+            if(iNow==5){
+                iNow=0;
+            }
+            // 按钮切换
+            // $('.num-btn').eq(iNow).addClass('active').siblings().removeClass('active');
+            // $('.img-list').eq(iNow).addClass('active').siblings().removeClass('active');
+            change(iNow)
+        });
+
+        $('#last').on('click',function(){
+            iNow--;
+            if(iNow==-1){
+                iNow=$('.num-list').length-1;
+            }
+            change(iNow)
+        })
+        function change(index){
+            $('.num-btn').eq(index).addClass('active').siblings().removeClass('active');
+            $('.img-list').eq(index).addClass('active').siblings().removeClass('active');
+        }
+
+
+        timer = setInterval(function(){
+            $('#next').trigger('click');    //trigger触发事件
+        },1500)
+
+        $('.box').on('mouseover',function(){
+            clearInterval(timer);
+        })
+
+        $('.box').on('mouseout',function(){
+            timer = setInterval(function(){
+            $('#next').trigger('click');
+        },1500)
         })
     </script>
 </body>
