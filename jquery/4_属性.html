@@ -13,6 +13,7 @@
     <div class="a">111</div>
     <input type="checkbox" checked="true">
     <input type="text" id="a" value="123">
+    <div id="div1">a</div>
     <script src="jquery-1.12.4.js"></script>
     <script>
         $("#btn").on('click', function () {
@@ -24,6 +25,12 @@
             $("input").prop("checked", !$("input").prop("checked"))
         })
         console.log($("#a").attr("value"));
+        $("#div1").css({
+            width:200,
+            height:200,
+            background:'red',
+            border:'1px solid black'
+        })
     </script>
 </body>
 
