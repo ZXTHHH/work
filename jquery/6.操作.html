@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">click</button>
+    <button class="btn2">click</button>
+    <div id="div1">111</div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('.btn').on('click',function(){
+            $('#div1').append('<span>apend</span>')
+            $('#div1').prepend('<span>prepend</span>')
+            $('#div1').before('<div>before</div>')
+            $('#div1').after('<div>after</div>')
+        })
+
+        // 替换
+        $('btn1').on('click',function(){
+            $('<div>replaceall</div>').replaceAll('#div1')
+        })
+    </script>
+</body>
+</html>

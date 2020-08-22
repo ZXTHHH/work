@@ -92,70 +92,14 @@
             </div>
         </div>
     </div>
+    
+
+    <script src="jquery-1.12.4.js"></script>
     <script>
-        var numBtn = document.getElementsByClassName("num-btn");
-        var imgList = document.getElementsByClassName("img-list");
-        var arrBtn = document.getElementsByClassName("arr-btn");
-        var nowIndex = 0;
-        var nextIndex;
-        timer = null;
-        var obox = document.getElementsByClassName("box")[0];
-
-
-        // 数字
-        for (var i = 0; i < numBtn.length; i++) {
-            numBtn[i].index = i;
-            numBtn[i].onmouseover = function () {
-                // for(var j=0;j<numBtn.length;j++){
-                //   numBtn[j].classList.remove("active");
-                //   imgList[j].classList.remove("active");
-                // }
-                // nowIndex = this.index;
-                // this.classList.add("active");
-                // imgList[this.index].classList.add("active");
-                jianTou(this.index)
-            }
-        }
-
-        function jianTou(_index) {
-            for (var j = 0; j < numBtn.length; j++) {
-                imgList[j].classList.remove("active");
-                numBtn[j].classList.remove("active");
-            }
-            numBtn[_index].classList.add("active");
-            imgList[_index].classList.add("active");
-            nowIndex = _index;
-        }
-        // 箭头
-        arrBtn[1].onclick = function () {
-            nextIndex = (++nowIndex) % 5;
-            jianTou(nextIndex);
-        }
-
-
-        arrBtn[0].onclick = function () {
-            var prevIndex = --nowIndex;
-            if (prevIndex == -1) {
-                prevIndex = 4;
-            }
-            jianTou(prevIndex);
-        }
-
-        obox.onmouseover = function () {
-            clearInterval(timer);
-        }
-        obox.onmouseout = function () {
-            run();
-        }
-
-        function run() {
-            timer = setInterval(function () {
-                var nextIndex = (++nowIndex) % 5;
-                jianTou(nextIndex)
-            }, 1000)
-        }
-        run();
-
+        $('.num-btn').on('click',function(){
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.img-list').eq( $(this).index() ).addClass('active').siblings().removeClass('active');
+        })
     </script>
 </body>
 

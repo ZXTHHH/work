@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 点击按钮 在ul内部后面生成一个元素 -->
+    <button>click</button>
+    <ul id="ul1">
+        <li>11111</li>
+        <li>22222</li>
+        <li>33333</li>
+        <li>44444</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $('button').on('click', function () {
+            $('ul').append('<li>' + Math.random() + '</li>')
+        });
+
+        // 绑定父元素,但是点击li才能触发    (点击子元素，会发生事件冒泡->发出父元素的点击事件 )
+        $('#ul1').on('click', 'li', function () {
+            console.log($(this).html())
+        });
+    </script>
+</body>
+
+</html>
