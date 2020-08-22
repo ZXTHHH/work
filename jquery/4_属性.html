@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">变类名</button>
+    <button id="btn1">打勾</button>
+    <div class="a">111</div>
+    <input type="checkbox" checked="true">
+    <input type="text" id="a" value="123">
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("#btn").on('click', function () {
+            $('.a').attr('class', 'b');
+        })
+
+        $('#btn1').on('click', function () {
+            // 用prop能重复，用attr只能一次
+            $("input").prop("checked", !$("input").prop("checked"))
+        })
+        console.log($("#a").attr("value"));
+    </script>
+</body>
+
+</html>

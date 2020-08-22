@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li class="a">111</li>
+        <li class="a">222</li>
+        <li>333</li>
+        <li>444</li>
+    </ul>
+
+    <input type="button" value="aaa">
+
+    <p>
+        <input type="checkbox" name="1" checked>
+        <input type="checkbox" name="2">
+        <input type="checkbox" name="3">
+        <input type="checkbox" name="4" checked>
+        <input type="checkbox" name="5">
+    </p>
+    
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $(".a").css("background","red");
+
+        $("ul :first-child").css("background", "red");
+        $("ul :last-child").css("background", "yellow");
+        $("ul :nth-child(2)").css("background", 'green');
+        $("li:eq(2)").css("background", 'grey');
+        $(":button").css("background", "pink");
+        $(":checked").css("height","30px")
+    </script>
+
+</body>
+
+</html>
