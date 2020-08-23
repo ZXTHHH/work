@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 按照索引顺序赋值,相当于let a =arr[0],let b = arr[1];
+        // let arr = [1,2,3];
+        // let [a,b] = arr;
+        // console.log(a,b)
+
+
+        // let arr1 = [1,2,[3,4],5];
+        // let[w,x,y,z] = arr1;
+        // console.log(w,x,y,z);
+
+
+        //对象解构赋值根据key(属性)对应 如果解构赋值取到undefind 用默认值
+        // let obj = {
+        //     name:'zs',
+        //     age:"18"
+        // }
+        // let {name:n,age,school='北大'} = obj;
+        // console.log(n,age,school);
+
+
+        //字符串->索引
+        // let str = 'abcdefg';
+        // let[x,y,z] = str;
+        // console.log(x,y,z);
+
+
+        // 数值互换1
+        // let a = 5;
+        // let b = 6;
+
+        // let c = a;
+        // a = b;
+        // b = c;
+        // console.log(a,b);
+
+        // 数值互换2
+        // let a = 5;
+        // let b = 6;
+
+        // a = a+b;
+        // b = a-b;
+        // a = a-b;
+        // console.log(a,b);
+
+
+        // 数值互换3
+        let a = 5;
+        let b = 6;
+
+        [b,a] = [a,b]
+        console.log(a,b);
+    </script>
+</body>
+</html>

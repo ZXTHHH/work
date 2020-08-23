@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        变量  
+            基本数据类型    string number boolea null （栈内存）
+                undefined   
+                    1.变量定义了没赋值
+                    2.数组索引越界
+                    3.访问对象下没有的属性
+                    4.函数没有return 默认返回undefind
+            引用数据类型    array object(堆内存)
+        */
+
+        /*
+        let和var的区别
+            1.let无变量提升
+            2.let不能重复声明
+            3.let有块级作用域
+            4.let有暂时性死区
+        */
+
+        // var定义会有变量提升 即会在当前作用域最上面定义此变量，但未赋值
+        // console.log(x);
+        // var x = 20;
+
+        // 用let定义变量无变量提升
+        // console.log(m);
+        // let m = 20;
+
+        
+        // let不能重复声明
+        // var a = 30;
+        // var a = 40;
+        // console.log(a);
+
+        // let b = 30;
+        // let b = 40;
+        // console.log(b);
+
+
+        // let有块级作用域，就是在花括号中的变量
+        // var c = true;
+        // if(c){
+        //     var d = 10;
+        // }
+        // console.log(d);
+
+        // let e = true;
+        // if(c){
+        //     let f = 10;
+        // }
+        // console.log(f);
+
+
+        // for(var i = 0;i<5;i++){     //i = 5
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },100);
+        // }
+
+        // let定义的变量有块级作用域,不会覆盖
+        // for(let i = 0;i<5;i++){     //0 1 2 3 4
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },100)
+        // }
+
+
+
+        //  let临时失效 暂时性死区(let定义的变量，在代码块以内,到定义let前临时失效)
+        let a = 10;
+        function foo(){
+            console.log(a);
+            let a = 20;
+        }
+        foo();
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        /*
+        const       定义常量,let定义变量
+            1.无变量提升
+            2.不能重复声明
+            3.有块级作用域
+            4.有暂时性死区
+            5.const是定义常量的，所以值不可以改变。如果出现改变值，那么是改变数组或obj，此时可以使用Object.freeze(obj)冻结。
+        */
+
+
+        const obj = {
+            name:'zs',
+            age:'20'
+        }
+        Object.freeze(obj);
+        obj.name = 'ls';
+        console.log(obj);
+
+        const arr = [1,2,3];
+        arr[0]=0;
+        console.log(arr);
+
+
+        // 复习js
+        // var a = 10;
+        // var b=a;
+        // var a = 20;
+        // console.log(a,b);
+
+        // var arr = [1,2,3];
+        // var arr1 = arr;
+        // arr[0] = 0;
+        // console.log(arr,arr1)
+    </script>
+</body>
+</html>
