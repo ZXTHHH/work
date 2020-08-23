@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        扩展运算符...
+            1.合并数组
+            2.数组的复制
+            3.把类数组转化为数组
+        */
+        let arr = [1,2,3]
+        let arr1 = [4,5,6]
+        let arr3 = [...arr,'7,8,9',...arr1]
+
+
+        console.log( arr.concat(arr1) );
+        console.log( [...arr,...arr1] );
+
+        // 类数组，不是真正的数组
+        let aLi = document.getElementsByTagName('li');
+        console.log(aLi);
+        for(let i=0;i<aLi.length;i++){
+            console.log(aLi[i]);
+        }
+
+
+
+        let arr2=[...aLi];
+        console.log(arr3);
+
+
+
+
+        //合并对象
+        let obj={
+            name:'zs',
+            age:19
+        }
+        let obj1={
+            school:'黑大',
+        }
+        let obj3={...obj,...obj1}
+        console.log(obj3)
+    </script>
+</body>
+</html>

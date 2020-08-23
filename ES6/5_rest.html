@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function foo(){
+            console.log(arguments);//不知道参数个数时取到参数
+            console.log(arguments[0]);
+        }
+        foo(1,2,3,4,5,6);
+
+        function fn(...rest){   //将剩余的参数放到数组
+            console.log(rest);
+        }
+        fn(1,2,3,4,5);
+    </script>
+</body>
+</html>
