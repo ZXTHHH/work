@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+        //获取屏幕宽度
+        var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        function Leaf() {
+
+            this.width = Math.random() * 50 + 100;       //100-150
+            this.left = Math.random() * (clientWidth - this.width);  //0-(clientWidth-this.width)
+            this.top = 0;
+
+
+            //创建dom元素 图片
+            var img = new Image();  //动态创建图片
+            img.src = 'img/img/' + (Math.floor(Math.random() * 4) + 1) + '.png'
+            img.style.width = this.width + 'px';
+            img.style.left = this.left + 'px';
+            img.style.top = this.top + 'px';
+
+            this.img = img;
+        }
+
+        Leaf.prototype.append = function () {
+            document.body.appendChild(this.img);
+        }
+
+
+        for (var i = 0; i < 10; i++) {
+            var leaf = new Leaf;
+            leaf.append();
+        }
+
+
+        Leaf.prototype.down = function () {
+
+        }
+
+    </script>
+</body>
+
+</html>
