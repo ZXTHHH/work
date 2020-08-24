@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 类 es5</title>
+</head>
+
+<body>
+    <script>
+        /*
+            类 具有相同属性和方法的集合
+        */
+
+        // var obj = {
+        //     name:'zs',
+        //     age:10,
+        //     say:function(){
+        //         console.log('asdfghjkl')
+        //     }
+        // }
+
+
+
+        //类
+        function Person(name,age) {
+            this.name = name;
+            this.age = age;
+            this.eat = function () {
+                console.log('吃东西')
+            }
+        }
+
+        var p = new Person('zs',10);
+        var p1 = new Person('ls',2)
+        console.log(p);
+        console.log(p1);
+
+    </script>
+</body>
+
+</html>

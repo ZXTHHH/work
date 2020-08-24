@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <script>
+
+        /*
+            1.普通函数的this指向执行时的this，而箭头函数的this指向声明时的this，指向父作用域的this
+            2.箭头函数不能作为构造函数，即不能new
+            3.箭头函数没有arguments
+        */
+
+        /*
+            function fn(){
+
+            }
+
+            var fun = function(){
+
+            }
+        */
+
+        // var foo = x=>{
+        //     console.log(x);
+        // }
+        // foo(1);
+
+        // var foo1 = x=>x;
+        // var foo2 = x=>{
+        //     return x;
+        // }
+
+        // console.log( foo1(666) );
+        // console.log( foo2(777) );
+
+
+
+            var aLi = document.getElementsByTagName('li');
+            for( var i=0;i<aLi.length;i++){
+                aLi[i].onclick=function(){
+                    setInterval(    ()=>{       //this指向li
+                        console.log(this.innerHTML);
+                    },1000)
+                }
+            }
+
+
+        //     function Person(){  //类=构造函数
+        //         this.name='zs'
+        //     }
+        //     var obj = new Person();
+        //     console.log(obj);
+
+        //    var Cat=() =>{
+
+        //    }
+        //    var cat = new Cat;
+
+
+        let f3 = (...rest)=>{
+            console.log(rest);
+        }
+        f3(1,2,3)
+    </script>
+</body>
+</html>
