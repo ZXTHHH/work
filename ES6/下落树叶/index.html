@@ -9,6 +9,10 @@
         img {
             position: absolute;
         }
+        *{
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 
@@ -17,9 +21,10 @@
 
         //获取屏幕宽度
         var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
         function Leaf() {
 
-            this.width = Math.random() * 50 + 100;       //100-150
+            this.width = Math.random() * 100 + 100;       //100-150
             this.left = Math.random() * (clientWidth - this.width);  //0-(clientWidth-this.width)
             this.top = 0;
 
@@ -34,19 +39,43 @@
             this.img = img;
         }
 
+        //插入图片方法
         Leaf.prototype.append = function () {
             document.body.appendChild(this.img);
         }
 
 
-        for (var i = 0; i < 10; i++) {
+        var leaflist = [];
+        for (var i = 0; i < 30; i++) {
             var leaf = new Leaf;
+            leaflist.push(leaf);
             leaf.append();
         }
 
-
+        // 下落方法
         Leaf.prototype.down = function () {
 
+            //每隔五毫秒
+            let time = setInterval(() => {
+                console.log(this.img.offsetTop , this.img.offsetHeight,clientHeight)
+                if ((this.img.offsetTop + this.img.offsetHeight)>=clientHeight) {
+                    clearInterval(time)
+                } else {
+                    this.img.style.top = this.img.offsetTop + 1 + 'px';
+                }
+            }, 5);
+        }
+
+
+        document.onclick = function () {
+
+            for (let i = 0; i < leaflist.length; i++) {
+                //让每片叶子的开始降落的时间不同
+                setTimeout(() => {
+                    leaflist[i].down();
+                }, Math.random() * 1000);
+
+            }
         }
 
     </script>
