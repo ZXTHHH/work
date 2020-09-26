@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2 v-if='isLogin'>hello 你好</h2>
+        <h2 v-else>请登录</h2>
+
+    <button @click='change'>click</button>
+        
+        <p v-if='x=="a"'>A</p>
+        <p v-else-if='x=="b"'>B</p>
+        <p v-else-if='x=="c"'>C</p>
+    </div>
+
+    <!-- 
+        v-if v-show 控制元素是否显示
+        v-if 没有元素
+        v-show 元素在 display:none 控制显示|隐藏(频繁显示用此方法)
+     -->
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                isLogin:false,//true hello || false 请登录
+                x:'c'
+            },
+            methods:{
+                change(){
+                    this.isLogin=true;
+                    // this.x = 'b'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

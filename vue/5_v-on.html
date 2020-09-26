@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            height: 300px;
+            width: 300px;
+            background-color: brown;
+        }
+        #div2{
+            height: 200px;
+            width: 200px;
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        v-on:click——>@click
+     -->
+    <div id="app">
+        <button v-on:click='add'>click</button>
+        <button @click='add1'>click</button>
+        <h2>{{count}}</h2>
+
+        <div id="div1" @click='change'>
+            <div id="div2" @click.stop='change1'></div>//用.stop来取消触发冒泡
+        </div>
+
+
+        <input v-on:keyup.enter='key' type="text">//键盘事件
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                count:0
+            },
+            methods:{
+                add(){
+                this.count++;
+                },
+                add1(){
+                    this.count--;
+                },
+                change(){
+                    console.log('我是div1')
+                },
+                change1(){
+                    console.log('我是div2')
+                },
+                key(){
+                    console.log('key事件')
+                }
+            }
+        })
+    </script>
+</body>
+</html>
