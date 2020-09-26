@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name:'zs',
+            age:18,
+            say:function(){
+                console.log('叭叭叭 我是'+this.name);
+            },
+            say1(){
+                console.log('叭叭叭叭 我是'+this.name)
+            }
+        }
+
+        obj.say();
+        obj.say1();
+
+        //动态属性，
+        let s1 = 'age';
+        console.log(obj[   s1]);
+
+
+        //==值  ===值和类型
+        let obj1 = {
+            name:'wangwu',
+            age:20,
+            school:'黑大'
+        }
+
+        let obj2 = {
+
+        }
+    </script>
+</body>
+</html>

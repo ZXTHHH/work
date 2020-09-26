@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ajax -->
+    <!-- 1.创建XMLHttpRequest 对象 -->
+
+    <script>
+    var xmlhttp;
+    if(window.XMLHttpRequest){
+        xmlhttp = new XMLHttpRequest();
+    }else{
+        xmlhttp = new ActiveXObject('Microsoft.XMLHTTP')
+    }
+
+    //AJAX - 向服务器发送请求
+    // 请求方式 请求地址 是否异步
+    xmlhttp.open('GET','test1.txt',true);
+    xmlhttp.send();
+
+
+    /*
+        GET POST
+
+    */
+    </script>
+
+</body>
+</html>

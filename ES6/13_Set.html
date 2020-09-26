@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        //set中成员唯一，不会重复  ->数组去重
+        let arr = [1,2,3,4,3,2,1]
+        let s1 = new Set([1,2,3,4]);
+        let s2 = new Set(arr);
+        function fn(arr){
+            let obj = {};//标识是否有属性
+            let result = [];//存储不重复元素
+            for(i = 0;i<arr.length;i++){
+                let val = arr[i];
+                if(obj[val]){
+
+                }else{
+                    obj[val] = 1;
+                    result.push(val)
+                }
+            }
+
+            return result;
+        }
+        let arr2 = [...s1];
+        let arr3 = [...s2];
+        console.log(arr2);
+        console.log(arr3);
+        console.log( fn(arr) )
+
+
+        for(let item of s1.keys()){
+            console.log(item)
+        }
+        
+        for(let item of s1.values()){
+            console.log(item)
+        }
+
+        
+        for(let item of s1.entries()){
+            console.log(item)
+        }
+    </script>
+</body>
+</html>

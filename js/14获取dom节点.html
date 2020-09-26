@@ -9,15 +9,22 @@
     <div id="box">
         <div class="div1">世界</div>
         <div class="div2">你好</div>
+        <div class="div3"></div>
     </div>
     <script>
+        var clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var clientHeight = document.documentElement.clientHeight || document.body.clientHeight;
         var oBox = document.getElementById("box");
         var oH1 = document.createElement("h1");
         var div1 = document.querySelector(".div1")
         var div2 = document.querySelector(".div2")
+        var div3 = document.querySelector(".div3")
 
         oH1.innerText = "hello";
         oH1.style.color = "red";
+        div3.style.height = "200px";
+        div3.style.width = "200px";
+        div3.style.color = "red";
         oBox.appendChild(oH1);
         oBox.insertBefore(div2,div1)  //前面放后面的前面
     </script>
