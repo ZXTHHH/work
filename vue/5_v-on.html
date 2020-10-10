@@ -27,11 +27,13 @@
         <h2>{{count}}</h2>
 
         <div id="div1" @click='change'>
-            <div id="div2" @click.stop='change1'></div>//用.stop来取消触发冒泡
+             <!-- 用.stop来取消触发冒泡 -->
+            <div id="div2" @click.stop='change1'></div>
         </div>
+       
 
-
-        <input v-on:keyup.enter='key' type="text">//键盘事件
+        <!-- 键盘事件 -->
+        <input v-on:keyup.enter='key' type="text">
     </div>
     <script src="vue.js"></script>
     <script>
